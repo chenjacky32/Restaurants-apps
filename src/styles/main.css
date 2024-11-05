@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  /* elements */
+  --background-color: #eff0f3;
+  --headline-color: #0d0d0d;
+  --paragraph-color: #2a2a2a;
+  --button-color: #ff8e3c;
+  --button-text-color: #0d0d0d;
+
+  /* ilustration */
+  --stroke: #0d0d0d;
+  --main-color: #eff0f3;
+  --highlight: #ff8e3c;
+  --secondary: #fffffe;
+  --tertiary: #d9376e;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  position: fixed;
+}
+
+.navbar {
+  background-color: var(--background-color);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  top: 0;
+}
+
+.navbar-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-block: 30px;
+  align-items: baseline;
+  max-width: 1024px;
+  margin: auto;
+}
+
+.navbar-group h1 {
+  font-size: 2rem;
+  color: var(--highlight);
+}
+
+.navbar-group .nav-menu {
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.nav-menu li a {
+  color: var(--headline-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.hero-section {
+  background-color: var(--button-color);
+  padding-block: 140px;
+}
+
+.hero-group {
+  max-width: 1024px;
+  margin: auto;
+  padding-block: 30px;
+  padding-inline: 20px;
+}
+
+.image-wrapper {
+  height: 100%;
+}
+
+.image-wrapper img {
+  width: 100%;
+}
+
+/* breakpoints */
+/* 640px */
+/* 768px */
+/* 1024px */
