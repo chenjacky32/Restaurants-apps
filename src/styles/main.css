@@ -68,6 +68,11 @@ body {
   font-size: 1.5rem;
 }
 
+.nav-menu li a:hover {
+  color: var(--tertiary);
+  font-weight: 700;
+}
+
 .hero-section {
   background-color: var(--button-color);
   padding-block: 60px;
@@ -165,6 +170,13 @@ body {
   font-weight: 500;
 }
 
+.item-section h1 {
+  text-align: center;
+  padding-block: 30px;
+  font-size: 2rem;
+  color: var(--headline-color);
+}
+
 .restaurant-grid {
   max-width: 1024px;
   margin: auto;
@@ -230,6 +242,17 @@ body {
   font-size: 1rem;
   color: var(--paragraph-color);
   line-height: 1.5;
+}
+
+.footer {
+  background-color: var(--background-color);
+  color: var(--paragraph-color);
+  padding-inline: 20px;
+  padding-block: 30px;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 /*  */

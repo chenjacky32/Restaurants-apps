@@ -1,6 +1,6 @@
 import "regenerator-runtime"; /* for async await transpile */
 import "../styles/main.css";
-import "../scripts/roots";
+
 import data from "../public/data/DATA.json";
 
 const slides = document.querySelectorAll(".slide");
@@ -54,5 +54,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Tambahkan card ke grid
     restaurantGrid.appendChild(card);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navbarItems = [
+    { text: "Home", href: "#" },
+    { text: "Favourite", href: "#" },
+    { text: "About Us", href: "https://github.com/chenjacky32" },
+  ];
+
+  const navbarMenu = document.querySelector(".nav-menu");
+
+  navbarItems.forEach((item) => {
+    const listItem = document.createElement("li");
+    const linkItem = document.createElement("a");
+
+    linkItem.href = item.href;
+    linkItem.textContent = item.text;
+
+    if (item.text === "About Us") {
+      linkItem.target = "_blank";
+    }
+
+    listItem.appendChild(linkItem);
+    navbarMenu.appendChild(listItem);
   });
 });
