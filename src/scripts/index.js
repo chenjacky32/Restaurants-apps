@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const navbarMenu = document.querySelector(".nav-menu");
+  const hamburgerItems = document.querySelector(".hamburger-items");
 
   navbarItems.forEach((item) => {
     const listItem = document.createElement("li");
@@ -78,5 +79,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     listItem.appendChild(linkItem);
     navbarMenu.appendChild(listItem);
+
+    const hamburgerListItem = document.createElement("li");
+    const hamburgerLinkItem = document.createElement("a");
+    hamburgerLinkItem.href = item.href;
+    hamburgerLinkItem.textContent = item.text;
+
+    if (item.text === "About Us") {
+      hamburgerLinkItem.target = "_blank";
+    }
+
+    hamburgerListItem.appendChild(hamburgerLinkItem);
+    hamburgerItems.appendChild(hamburgerListItem);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.querySelector(".hamburger-menu");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+
+    if (navMenu.classList.contains("active")) {
+      navMenu.style.display = "block";
+      hamburger.innerHTML = "&#x2715";
+    } else {
+      navMenu.style.display = "none";
+      hamburger.innerHTML = "&#9776";
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 640) {
+      navMenu.style.display = "none";
+      navMenu.classList.remove("active");
+      hamburger.innerHTML = "&#9776";
+    }
   });
 });

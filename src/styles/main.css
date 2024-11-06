@@ -73,6 +73,33 @@ body {
   font-weight: 700;
 }
 
+.nav-menu li a:focus {
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--headline-color);
+  font-weight: 800;
+  display: none;
+}
+
+.hamburger:hover {
+  color: var(--tertiary);
+}
+
+.hamburger:focus {
+  color: var(--highlight);
+}
+
+.hamburger-menu {
+  display: none;
+}
+
 .hero-section {
   background-color: var(--button-color);
   margin-block-end: 40px;
@@ -278,6 +305,10 @@ body {
     font-size: 62.5%;
   }
 
+  .hamburger-menu {
+    display: none;
+  }
+
   .restaurant-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -292,6 +323,57 @@ body {
 @media (max-width: 640px) {
   html {
     font-size: 55%;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .hamburger-menu {
+    padding-block: 15px;
+    display: none;
+    background-color: var(--highlight);
+    position: absolute;
+    width: 100%;
+    height: 20vh;
+    top: 20;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    -webkit-transition: height 0.3s ease;
+    -moz-transition: height 0.3s ease;
+    -ms-transition: height 0.3s ease;
+    -o-transition: height 0.3s ease;
+  }
+
+  .hamburger-menu .hamburger-items li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: color 0.3s ease-in-out;
+    -webkit-transition: color 0.3s ease-in-out;
+    -moz-transition: color 0.3s ease-in-out;
+    -ms-transition: color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out;
+  }
+
+  .hamburger-menu .hamburger-items li a:hover {
+    color: var(--tertiary);
+  }
+
+  .hamburger-menu .hamburger-items li a:focus {
+    color: var(--button-text-color);
+  }
+
+  .nav-menu li {
+    display: none;
   }
 
   .restaurant-grid {
