@@ -31,6 +31,27 @@ body {
   position: relative;
 }
 
+.skip-to-content {
+  position: absolute;
+  top: 100px;
+  left: 20%;
+  background-color: var(--background-color);
+  color: var(--button-text-color);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  text-decoration: none;
+  z-index: 99;
+  font-weight: 600;
+}
+
+.skip-to-content:focus {
+  left: 25%;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  font-weight: 800;
+}
+
 .navbar {
   background-color: var(--background-color);
   position: fixed;
@@ -279,6 +300,16 @@ body {
   text-align: center;
   font-size: 1rem;
   font-weight: 700;
+}
+
+.hamburger:focus,
+.nav-menu li a:focus,
+.hamburger-menu .hamburger-items li a:focus {
+  outline: 2px solid var(--headline-color);
+}
+
+[tabindex]:focus {
+  outline: 3px solid var(--button-color); /* Highlight focus */
 }
 
 /*  */

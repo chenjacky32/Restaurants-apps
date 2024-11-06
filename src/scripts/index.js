@@ -29,29 +29,50 @@ function nextSlide() {
 setInterval(nextSlide, 3000);
 
 document.addEventListener("DOMContentLoaded", () => {
-  const restaurants = data.restaurants;
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.querySelector(".hamburger-menu");
+  const restaurantTitle = document.getElementById("restaurant-title");
   const restaurantGrid = document.getElementById("restaurantGrid");
 
-  // Iterasi setiap item di data JSON
-  restaurants.forEach((restaurant) => {
-    // Buat elemen card baru
+  //untuk ngecek posisi breakpoint
+  function updateTabindex() {
+    const windowWidth = window.innerWidth;
+    const isMobile = windowWidth <= 640;
+
+    if (isMobile) {
+      // Arahkan fokus pertama kali ke hamburger jika breakpoint <= 640px
+      hamburger.setAttribute("tabindex", "3");
+      restaurantTitle.setAttribute("tabindex", "4"); // Setelah hamburger, fokus ke judul restoran
+    } else {
+      // Arahkan fokus ke judul restoran jika breakpoint > 640px
+      hamburger.setAttribute("tabindex", "-1"); // Menghilangkan tabindex pada hamburger jika tidak diperlukan
+      restaurantTitle.setAttribute("tabindex", "5"); // Fokus ke judul restoran
+    }
+  }
+
+  // Panggil updateTabindex saat DOM siap dan saat resize
+  updateTabindex();
+  window.addEventListener("resize", updateTabindex);
+
+  // Menambahkan item restoran ke grid
+  const restaurants = data.restaurants;
+  restaurants.forEach((restaurant, index) => {
     const card = document.createElement("div");
     card.classList.add("card");
 
-    // Isi konten card
+    // Tambahkan tabindex untuk item restoran
+    card.setAttribute("tabindex", `${7 + index}`); // Urutan tab dimulai dari 7
     card.innerHTML = `
       <div class="image-container">
         <span class="location">Kota. ${restaurant.city}</span>
-        <img src="${restaurant.pictureId}" alt="${restaurant.name}">
+        <img src="${restaurant.pictureId}" alt="${restaurant.name || ""}">
       </div>
       <div class="card-content">
         <p class="rating">Rating: ${restaurant.rating}</p>
         <h2 class="restaurant-name">${restaurant.name}</h2>
         <p class="description">${restaurant.description}</p>
       </div>
-      `;
-
-    // Tambahkan card ke grid
+    `;
     restaurantGrid.appendChild(card);
   });
 });
@@ -66,12 +87,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbarMenu = document.querySelector(".nav-menu");
   const hamburgerItems = document.querySelector(".hamburger-items");
 
-  navbarItems.forEach((item) => {
+  navbarItems.forEach((item, index) => {
     const listItem = document.createElement("li");
     const linkItem = document.createElement("a");
 
     linkItem.href = item.href;
     linkItem.textContent = item.text;
+
+    linkItem.setAttribute("tabIndex", `${index + 2}`);
 
     if (item.text === "About Us") {
       linkItem.target = "_blank";
@@ -85,6 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburgerLinkItem.href = item.href;
     hamburgerLinkItem.textContent = item.text;
 
+    hamburgerLinkItem.setAttribute("tabindex", `${index + 2}`);
+
     if (item.text === "About Us") {
       hamburgerLinkItem.target = "_blank";
     }
@@ -97,11 +122,17 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.querySelector(".hamburger-menu");
+  const mainContent = document.getElementById("mainContent");
 
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
+    const isOpen = navMenu.classList.contains("active");
 
-    if (navMenu.classList.contains("active")) {
+    hamburger.setAttribute("aria-expanded", isOpen);
+
+    mainContent.setAttribute("aria-hidden", isOpen);
+
+    if (isOpen) {
       navMenu.style.display = "block";
       hamburger.innerHTML = "&#x2715";
     } else {
@@ -114,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.remove("active");
       hamburger.innerHTML = "&#9776";
       navMenu.style.display = "none";
+      mainContent.removeAttribute("aria-hidden");
     }
   });
 });
