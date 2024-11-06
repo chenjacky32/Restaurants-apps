@@ -75,17 +75,12 @@ body {
 
 .hero-section {
   background-color: var(--button-color);
-  padding-block: 60px;
-  border-color: #d9376e;
+  margin-block-end: 40px;
+  height: fit-content;
 }
 
 .hero-group {
   margin: auto;
-  padding-block: 30px;
-}
-
-.hero-group h1 {
-  background-color: transparent;
 }
 
 .container-image {
@@ -159,6 +154,8 @@ body {
   background-color: var(--paragraph-color);
   color: var(--highlight);
   font-weight: 800;
+  padding-block: 5px;
+  padding-inline: 10px;
 }
 
 .hero-content p {
@@ -168,6 +165,7 @@ body {
   line-height: 1.5;
   color: var(--secondary);
   font-weight: 500;
+  padding: 10px;
 }
 
 .item-section h1 {
@@ -263,4 +261,22 @@ body {
 }
 
 @media (max-width: 1024px) {
+  html {
+    font-size: 75%;
+  }
+
+  .hero-section {
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 55%;
+  }
 }
