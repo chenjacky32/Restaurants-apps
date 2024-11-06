@@ -105,16 +105,15 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.style.display = "block";
       hamburger.innerHTML = "&#x2715";
     } else {
-      navMenu.style.display = "none";
       hamburger.innerHTML = "&#9776";
     }
   });
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 640) {
-      navMenu.style.display = "none";
       navMenu.classList.remove("active");
       hamburger.innerHTML = "&#9776";
+      navMenu.style.display = "none";
     }
   });
 });
