@@ -64,7 +64,8 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding-block: 30px;
+  padding-block-start: 25px;
+  padding-block-end: 15px;
   padding-inline: 20px;
   align-items: baseline;
   max-width: 1024px;
@@ -72,8 +73,10 @@ body {
 }
 
 .navbar-group h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--highlight);
+  display: inline-block;
+  font-weight: 800;
 }
 
 .navbar-group .nav-menu {
@@ -84,9 +87,18 @@ body {
 }
 
 .nav-menu li a {
+  display: inline-block;
   color: var(--headline-color);
   text-decoration: none;
   font-size: 1.5rem;
+  min-height: 44px;
+  min-width: 44px;
+  font-weight: 700;
+  transition: color 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
 }
 
 .nav-menu li a:hover {
@@ -101,9 +113,11 @@ body {
 
 .hamburger {
   background: none;
+  min-width: 44px;
+  min-height: 44px;
   border: none;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--headline-color);
   font-weight: 800;
   display: none;
@@ -329,6 +343,11 @@ body {
     gap: 10px;
     padding-inline: 10px;
   }
+
+  .navbar-group {
+    padding-block-start: 25px;
+    padding-block-end: 10px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -354,6 +373,10 @@ body {
 @media (max-width: 640px) {
   html {
     font-size: 55%;
+  }
+
+  .navbar-group {
+    padding-block: 20px;
   }
 
   .hamburger {
@@ -390,6 +413,7 @@ body {
 
   .hamburger-menu.active {
     max-height: 500px;
+    height: auto;
     transform: translateY(0);
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -404,6 +428,8 @@ body {
     color: var(--secondary);
     text-decoration: none;
     font-size: 1.5rem;
+    min-height: 44px;
+    min-width: 44px;
     font-weight: 700;
     transition: color 0.3s ease-in-out;
     -webkit-transition: color 0.3s ease-in-out;
