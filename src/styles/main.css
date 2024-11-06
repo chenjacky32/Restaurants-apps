@@ -33,23 +33,23 @@ body {
 
 .skip-to-content {
   position: absolute;
-  top: 100px;
-  left: 20%;
-  background-color: var(--background-color);
+  top: -40px;
+  z-index: 100;
+  background-color: var(--button-color);
   color: var(--button-text-color);
   padding: 5px 10px;
   border-radius: 4px;
-  font-size: 0.875rem;
+  font-size: 1rem;
   text-decoration: none;
-  z-index: 99;
   font-weight: 600;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 .skip-to-content:focus {
-  left: 25%;
-  background-color: var(--button-color);
-  color: var(--button-text-color);
-  font-weight: 800;
+  top: 0;
 }
 
 .navbar {

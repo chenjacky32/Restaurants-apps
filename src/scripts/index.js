@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const navbarItems = [
-    { text: "Home", href: "#" },
+    { text: "Home", href: "/" },
     { text: "Favourite", href: "#" },
     { text: "About Us", href: "https://github.com/chenjacky32" },
   ];
