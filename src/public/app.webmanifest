@@ -1,0 +1,18 @@
+{
+  "id": "restaurants-apps-lite",
+  "start_url": "./index.html",
+  "name": "Restaurants Apps Lite",
+  "short_name": "Restaurants Lite",
+  "description": "A web application for finding restaurants",
+  "display": "standalone",
+  "background_color": " #fffffe",
+  "theme_color": " #ff8e3c;",
+  "icons": [
+    {
+      "src": "/icons/icons.jpeg",
+      "sizes": "72x72",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
