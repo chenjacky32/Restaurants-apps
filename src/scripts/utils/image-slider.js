@@ -9,7 +9,7 @@ const ImageSlider = {
     this._slides.forEach((slide, i) => {
       slide.classList.remove('active', 'previous');
       if (i === index) {
-        slide.classList.add('active'); // Hanya slide yang sesuai yang menjadi aktif
+        slide.classList.add('active');
       }
     });
   },
@@ -20,7 +20,7 @@ const ImageSlider = {
   },
 
   _startSlideshow() {
-    this._interval = setInterval(() => this._nextSlide(), 2000);
+    this._interval = setInterval(() => this._nextSlide(), 3500);
   },
 
   stopSlideshow() {

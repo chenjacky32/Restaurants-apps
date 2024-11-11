@@ -6,7 +6,7 @@ const createItemTemplate = (items) => {
       </div>
       <div class="card-content">
         <p class="rating">Rating: ${items.rating}</p>
-        <h2 class="restaurant-name">${items.name}</h2>
+        <h2 class="restaurant-name"><a href="#/detail/${items.id}">${items.name}</a></h2>
         <p class="description">${items.description}</p>
       </div>
     `;
