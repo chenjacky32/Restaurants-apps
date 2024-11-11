@@ -1,57 +1,6 @@
 import { createItemTemplate } from '../templates/templates-creator';
 import ImageSlider from '../../utils/image-slider';
-
-const listRestaurants = [
-  {
-    id: 'rqdv5juczeskfw1e867',
-    name: 'Melting Pot',
-    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ...',
-    pictureId: '14',
-    city: 'Medan',
-    rating: 4.2,
-  },
-  {
-    id: 's1knt6za9kkfw1e867',
-    name: 'Kafe Kita',
-    description: 'Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. ...',
-    pictureId: '25',
-    city: 'Gorontalo',
-    rating: 4,
-  },
-  {
-    id: 'rqdv5juczeskfw1e867',
-    name: 'Melting Pot',
-    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ...',
-    pictureId: '14',
-    city: 'Medan',
-    rating: 4.2,
-  },
-  {
-    id: 's1knt6za9kkfw1e867',
-    name: 'Kafe Kita',
-    description: 'Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. ...',
-    pictureId: '25',
-    city: 'Gorontalo',
-    rating: 4,
-  },
-  {
-    id: 'rqdv5juczeskfw1e867',
-    name: 'Melting Pot',
-    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ...',
-    pictureId: '14',
-    city: 'Medan',
-    rating: 4.2,
-  },
-  {
-    id: 's1knt6za9kkfw1e867',
-    name: 'Kafe Kita',
-    description: 'Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. ...',
-    pictureId: '25',
-    city: 'Gorontalo',
-    rating: 4,
-  },
-  // Add more favorites as needed
-];
+import RestaurantSource from '../../data/restaurant-source';
 
 const List = {
   async render() {
@@ -82,8 +31,10 @@ const List = {
     const slides = document.querySelectorAll('.slide');
     ImageSlider.init({ slides });
 
+    const restaurantData = await RestaurantSource.listRestaurants();
+    console.log(restaurantData);
     const restaurantGrid = document.querySelector('#restaurantGrid');
-    listRestaurants.forEach((restaurant, index) => {
+    restaurantData.forEach((restaurant, index) => {
       const card = document.createElement('div');
       card.classList.add('card');
       card.setAttribute('tabindex', `${7 + index}`);
