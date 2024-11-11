@@ -1,32 +1,19 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import data from '../public/data/DATA.json';
+import App from './views/app';
 
-const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
+const app = new App({
+  content: document.querySelector('#mainContent'),
+});
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove('active', 'previous');
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-    // Atur slide saat ini
-    if (i === index) {
-      slide.classList.add('active');
-    }
-
-    // Atur slide sebelumnya
-    if (i === (index - 1 + slides.length) % slides.length) {
-      slide.classList.add('previous');
-    }
-  });
-}
-
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
-
-setInterval(nextSlide, 3000);
+window.addEventListener('load', () => {
+  app.renderPage();
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
@@ -79,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const navbarItems = [
-    { text: 'Home', href: '/' },
-    { text: 'Favourite', href: '#' },
+    { text: 'Home', href: '#/home' },
+    { text: 'Favourite', href: '#/favorite' },
     { text: 'About Us', href: 'https://github.com/chenjacky32' },
   ];
 
