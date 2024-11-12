@@ -30,9 +30,7 @@ const List = {
   async afterRender() {
     const slides = document.querySelectorAll('.slide');
     ImageSlider.init({ slides });
-
     const restaurantData = await RestaurantSource.listRestaurants();
-    console.log(restaurantData);
     const restaurantGrid = document.querySelector('#restaurantGrid');
     restaurantData.forEach((restaurant, index) => {
       const card = document.createElement('div');
