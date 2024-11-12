@@ -553,6 +553,29 @@ button:hover {
   outline: 3px solid var(--button-color); /* Highlight focus */
 }
 
+/* like button */
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-color);
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.like:hover {
+  background-color: var(--highlight);
+}
+
 /*  */
 @media (min-width: 1200px) {
   .container-image {
