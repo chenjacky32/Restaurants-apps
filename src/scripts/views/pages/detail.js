@@ -24,6 +24,8 @@ const Detail = {
         city: restaurant.city,
         address: restaurant.address,
         pictureId: restaurant.pictureId,
+        description: restaurant.description,
+        rating: restaurant.rating,
       },
     });
     restaurantContainer.innerHTML = createItemDetailTemplate(restaurant);
