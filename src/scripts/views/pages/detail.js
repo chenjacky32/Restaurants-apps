@@ -5,7 +5,7 @@ import { createItemDetailTemplate, createLikeButtonTemplate, createLikedButtonTe
 
 const Detail = {
   async render() {
-    return `<section class="restaurant-detail">
+    return `<section class="restaurant-detail" aria-labelledby="restaurant-title" id="restaurantDetail">
         </section>
         <section id="likeButtonSection">
         </section>

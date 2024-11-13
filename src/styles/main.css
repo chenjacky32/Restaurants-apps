@@ -306,10 +306,18 @@ body {
   margin-bottom: 10px;
 }
 
+.restaurant-name a {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+  margin: auto;
+}
+
 .description {
   font-size: 1rem;
   color: var(--paragraph-color);
   line-height: 1.5;
+  text-align: justify;
 }
 
 main {
