@@ -46,4 +46,21 @@ describe('Liking a Restaurant Items', () => {
 
     await FavouriteRestaurantsIdb.deleteRestaurants(1);
   });
+
+  it('should not add a restaurant again when its already liked', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonSection: document.querySelector('#likeButtonSection'),
+      restaurants: {
+        id: 1,
+      },
+    });
+    await FavouriteRestaurantsIdb.putRestaurants({ id: 1 });
+
+    //mengecek item restoran berhasil di-like
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+
+    //tidak ada item restoran yang ganda
+    expect(await FavouriteRestaurantsIdb.getAllRestaurants()).toEqual([{ id: 1 }]);
+    await FavouriteRestaurantsIdb.deleteRestaurants(1);
+  });
 });
