@@ -14,6 +14,7 @@ export default [
       'linebreak-style': 'off',
       indent: 'off',
       'no-prototype-builtins': 'off',
+      'no-const-assign': off,
     },
   },
 ];
