@@ -24,4 +24,15 @@ describe('Unliking a Restaurant Items', () => {
     });
     expect(document.querySelector('[aria-label="unlike this restaurants"]')).toBeTruthy();
   });
+
+  it('should not display like when the restaurant item has been liked', async () => {
+    await likeButtonInitiator.init({
+      likeButtonSection: document.querySelector('#likeButtonSection'),
+      restaurants: {
+        id: 1,
+      },
+    });
+
+    expect(document.querySelector('[aria-label="like this restaurants"]')).toBeFalsy();
+  });
 });
