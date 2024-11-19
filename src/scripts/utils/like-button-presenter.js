@@ -1,7 +1,7 @@
 import FavouriteRestaurantsIdb from '../data/favourites-restaurant-idb';
 import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/templates-creator';
 
-const likeButtonInitiator = {
+const likeButtonPresenter = {
   async init({ likeButtonSection, restaurants }) {
     this._likeButtonSection = likeButtonSection;
     this._restaurants = restaurants;
@@ -45,4 +45,4 @@ const likeButtonInitiator = {
   },
 };
 
-export default likeButtonInitiator;
+export default likeButtonPresenter;
