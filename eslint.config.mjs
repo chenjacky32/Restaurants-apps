@@ -13,6 +13,7 @@ export default [
       'no-undef': 'off',
       'linebreak-style': 'off',
       indent: 'off',
+      'no-prototype-builtins': 'off',
     },
   },
 ];

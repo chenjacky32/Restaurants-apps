@@ -64,7 +64,7 @@ describe('Liking a Restaurant Items', () => {
     await FavouriteRestaurantsIdb.deleteRestaurants(1);
   });
 
-  xit('should not add a restaurant item when it has no id', async () => {
+  it('should not add a restaurant item when it has no id', async () => {
     await LikeButtonInitiator.init({
       likeButtonSection: document.querySelector('#likeButtonSection'),
       restaurants: {},
