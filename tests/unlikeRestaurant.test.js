@@ -35,4 +35,15 @@ describe('Unliking a Restaurant Items', () => {
 
     expect(document.querySelector('[aria-label="like this restaurants"]')).toBeFalsy();
   });
+
+  it('should be able to remove liked restaurant item from the list', async () => {
+    await likeButtonInitiator.init({
+      likeButtonSection: document.querySelector('#likeButtonSection'),
+      restaurants: {
+        id: 1,
+      },
+    });
+    document.querySelector('[aria-label="unlike this restaurants"]').dispatchEvent(new Event('click'));
+    expect(await FavouriteRestaurantsIdb.getAllRestaurants()).toEqual([]);
+  });
 });
