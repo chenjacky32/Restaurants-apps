@@ -46,4 +46,20 @@ describe('Unliking a Restaurant Items', () => {
     document.querySelector('[aria-label="unlike this restaurants"]').dispatchEvent(new Event('click'));
     expect(await FavouriteRestaurantsIdb.getAllRestaurants()).toEqual([]);
   });
+
+  it('should not throw error when user click unlike widget if the unliked restaurant item is not in the list', async () => {
+    await likeButtonInitiator.init({
+      likeButtonSection: document.querySelector('#likeButtonSection'),
+      restaurants: {
+        id: 1,
+      },
+    });
+
+    // Hapus item restoran dari list favourite
+    await FavouriteRestaurantsIdb.deleteRestaurants(1);
+
+    //simulasi user menekan widget unlike
+    document.querySelector('[aria-label="unlike this restaurants"]').dispatchEvent(new Event('click'));
+    expect(await FavouriteRestaurantsIdb.getAllRestaurants()).toEqual([]);
+  });
 });
