@@ -506,6 +506,7 @@ button:hover {
   gap: 20px;
   padding-inline: 20px;
   padding-block: 30px;
+  margin-inline: auto;
 }
 
 /* Favorite Item Card Styling */
@@ -538,6 +539,11 @@ button:hover {
   color: #777;
   font-size: 0.9em;
   line-height: 1.4;
+}
+
+.restaurant-item__not__found {
+  display: inline-block;
+  grid-column: 2;
 }
 
 .footer {
