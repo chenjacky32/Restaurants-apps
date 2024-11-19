@@ -1,5 +1,5 @@
 import FavouriteRestaurantsIdb from '../data/favourites-restaurant-idb';
-import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/templates-creator';
+import { createLikeButtonTemplate, createUnlikeButtonTemplate } from '../views/templates/templates-creator';
 
 const likeButtonPresenter = {
   async init({ likeButtonSection, restaurants }) {
@@ -35,7 +35,7 @@ const likeButtonPresenter = {
   },
 
   _renderLiked() {
-    this._likeButtonSection.innerHTML = createLikedButtonTemplate();
+    this._likeButtonSection.innerHTML = createUnlikeButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
