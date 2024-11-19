@@ -30,4 +30,20 @@ describe('Liking a Restaurant Items', () => {
 
     expect(document.querySelector('[aria-label="unlike this restaurants"]')).toBeFalsy();
   });
+
+  it('should be able to like the restaurant item', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonSection: document.querySelector('#likeButtonSection'),
+      restaurants: {
+        id: 1,
+      },
+    });
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+
+    //mengecek item restoran berhasil di-like
+    const restaurantItem = await FavouriteRestaurantsIdb.getRestaurants(1);
+    expect(restaurantItem).toEqual({ id: 1 });
+
+    await FavouriteRestaurantsIdb.deleteRestaurants(1);
+  });
 });
