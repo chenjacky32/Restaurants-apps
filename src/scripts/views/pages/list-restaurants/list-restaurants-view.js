@@ -1,3 +1,5 @@
+import { createItemTemplate } from '../../templates/templates-creator';
+
 class ListRestaurantsView {
   getTemplate() {
     return `
@@ -32,9 +34,13 @@ class ListRestaurantsView {
       const card = document.createElement('div');
       card.classList.add('card');
       card.setAttribute('tabindex', `${7 + index}`);
-      card.innerHTML = createItemTemplate(restaurant);
+      card.innerHTML = this._renderItemTemplate(restaurant);
       restaurantGrid.appendChild(card);
     });
+  }
+
+  _renderItemTemplate(restaurant) {
+    return createItemTemplate(restaurant);
   }
 
   renderEmptyRestaurants() {

@@ -14,11 +14,16 @@ exports.config = {
     Playwright: {
       browser: 'chromium',
       url: 'http://localhost:9000',
-      show: true
-    }
+      show: true,
+    },
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
   },
-  name: 'restaurant-apps-starter-project'
-}
+  name: 'restaurant-apps-starter-project',
+  plugins: {
+    screenshotOnFail: {
+      enabled: true,
+    },
+  },
+};
