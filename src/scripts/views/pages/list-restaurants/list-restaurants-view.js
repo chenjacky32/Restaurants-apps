@@ -38,8 +38,12 @@ class ListRestaurantsView {
   }
 
   renderEmptyRestaurants() {
-    const restaurantGrid = document.querySelector('#restaurantGrid');
-    restaurantGrid.innerHTML = '<p class="empty-message">No restaurants found!</p>';
+    const itemSection = document.querySelector('.item-section');
+    itemSection.insertAdjacentHTML('beforeend', this._getEmptyRestaurantTemplate());
+  }
+
+  _getEmptyRestaurantTemplate() {
+    return `<p class="empty-message">No restaurants found!</p>`;
   }
 }
 

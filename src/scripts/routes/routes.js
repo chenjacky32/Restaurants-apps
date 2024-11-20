@@ -1,5 +1,5 @@
 import Detail from '../views/pages/detail';
-import List from '../views/pages/List';
+import List from '../views/pages/list';
 import Favorite from '../views/pages/favorite';
 
 const routes = {

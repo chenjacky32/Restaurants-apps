@@ -234,6 +234,12 @@ body {
   padding: 10px;
 }
 
+.item-section {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .item-section h1 {
   text-align: center;
   padding-block: 30px;
@@ -318,6 +324,13 @@ body {
   color: var(--paragraph-color);
   line-height: 1.5;
   text-align: justify;
+}
+
+.empty-message {
+  margin: auto;
+  display: inline-block;
+  color: var(--tertiary);
+  font-size: 1rem;
 }
 
 main {
@@ -544,6 +557,8 @@ button:hover {
 .restaurant-item__not__found {
   display: inline-block;
   grid-column: 2;
+  color: var(--tertiary);
+  font-size: 1rem;
 }
 
 .footer {
