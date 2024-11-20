@@ -171,17 +171,17 @@ body {
 }
 
 .slide1 {
-  background-image: url('../public/images/heros/hero-image_1.jpg');
+  background-image: url('../public/images/heros/hero-image_1-large.jpg');
   object-fit: cover;
 }
 
 .slide2 {
-  background-image: url('../public/images/heros/hero-image_2.jpg');
+  background-image: url('../public/images/heros/hero-image_2-large.jpg');
   object-fit: cover;
 }
 
 .slide3 {
-  background-image: url('../public/images/heros/hero-image_3.jpg');
+  background-image: url('../public/images/heros/hero-image_3-large.jpg');
   object-fit: cover;
 }
 
@@ -638,6 +638,21 @@ button:hover {
     display: none;
   }
 
+  .slide1 {
+    background-image: url('../public/images/heros/hero-image_1-medium.jpg');
+    object-fit: cover;
+  }
+
+  .slide2 {
+    background-image: url('../public/images/heros/hero-image_2-medium.jpg');
+    object-fit: cover;
+  }
+
+  .slide3 {
+    background-image: url('../public/images/heros/hero-image_3-medium.jpg');
+    object-fit: cover;
+  }
+
   .restaurant-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -661,6 +676,21 @@ button:hover {
 @media (max-width: 640px) {
   html {
     font-size: 55%;
+  }
+
+  .slide1 {
+    background-image: url('../public/images/heros/hero-image_1-small.jpg');
+    object-fit: cover;
+  }
+
+  .slide2 {
+    background-image: url('../public/images/heros/hero-image_2-small.jpg');
+    object-fit: cover;
+  }
+
+  .slide3 {
+    background-image: url('../public/images/heros/hero-image_3-small.jpg');
+    object-fit: cover;
   }
 
   .navbar-group {
