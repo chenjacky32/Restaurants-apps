@@ -1,6 +1,6 @@
 import API_ENDPOINT from '../../globals/api-endpoints';
 
-const getImageUrl = (pictureId) => `${API_ENDPOINT.IMAGE_MEDIUM(pictureId)}`;
+const getImageUrl = (pictureId) => `${API_ENDPOINT.IMAGE_MEDIUM(pictureId)}?v=${Date.now}`;
 
 const createItemTemplate = (items) => {
   const { city, pictureId, name, rating, id, description } = items;
@@ -8,7 +8,7 @@ const createItemTemplate = (items) => {
   return `
       <div class="image-container">
         <span class="location">Kota. ${city}</span>
-        <img src="${getImageUrl(pictureId)}" alt="${name || ''}">
+        <img class="lazyload" data-src="${getImageUrl(pictureId)}" alt="${name || ''}">
       </div>
       <div class="card-content">
         <p class="rating">Rating: ${rating}</p>
@@ -44,7 +44,7 @@ const createItemDetailTemplate = (items) => {
     .join('');
 
   return `<div class="restaurant-header">
-      <img id="restaurant-image" src=${getImageUrl(pictureId)} alt="${name}">
+      <img class="lazyload" id="restaurant-image" data-src="${getImageUrl(pictureId)}" alt="${name}" >
       <div class="restaurant-info">
         <h1 id="restaurant-name">${name}</h1>
         <p id="restaurant-rating">Rating: ${rating}</p>
