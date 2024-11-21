@@ -6,51 +6,30 @@
     <meta name="keywords" content="FoodieFinds || Apps" />
     <meta name="author" content="Jacky Chen" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#ff8e3c" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./icons/icons.jpeg" />
+    <link rel="manifest" href="./app.webmanifest" />
+    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
     <title>FoodieFinds</title>
   </head>
-  <a href="#restaurantGrid" class="skip-to-content" tabindex="1">Skip to main content here!!</a>
+  <a class="skip-to-content" tabindex="0">Skip to main content here!!</a>
   <body>
     <header class="navbar">
       <nav class="navbar-group" aria-label="Main Navigation">
-        <h1 tabindex="2">FoodieFinds</h1>
-        <ul class="nav-menu">
+        <h1 tabindex="0">FoodieFinds</h1>
+        <ul class="nav-menu" tabindex="0">
           <!-- nav-items -->
         </ul>
-        <button id="hamburger" tabindex="3" class="hamburger" aria-label="Open menu">&#9776;</button>
+        <button id="hamburger" tabindex="0" class="hamburger" aria-label="Open menu">&#9776;</button>
       </nav>
       <div class="hamburger-menu" aria-hidden="true">
-        <ul class="hamburger-items">
+        <ul class="hamburger-items" tabindex="0">
           <!-- hamburger items -->
         </ul>
       </div>
     </header>
-    <main id="mainContent">
-      <article>
-        <section class="hero-section" aria-labelledby="hero-title">
-          <div class="hero-group">
-            <div class="container-image">
-              <div class="hero-content">
-                <h1 tabindex="4">Find Your Favorite Restaurant Here!</h1>
-                <p tabindex="5">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolorem fugit praesentium harum possimus, aliquam explicabo ex veniam architecto illo officia nostrum ipsa aspernatur eligendi aliquid obcaecati deleniti,
-                  omnis provident!
-                </p>
-              </div>
-              <div class="slide slide1"></div>
-              <div class="slide slide2"></div>
-              <div class="slide slide3"></div>
-            </div>
-          </div>
-        </section>
-        <section class="item-section" aria-labelledby="restaurant-title">
-          <h1 id="restaurant-title" tabindex="6">List Restaurant</h1>
-          <div class="restaurant-grid" id="restaurantGrid">
-            <!-- item Restaurant-->
-          </div>
-        </section>
-      </article>
-    </main>
+    <main id="mainContent" tabindex="0"></main>
     <footer class="footer" aria-labelledby="footer-text">
       <p>Copyright &copy; 2024 - FoodieFinds</p>
     </footer>
