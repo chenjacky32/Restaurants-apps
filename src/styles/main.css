@@ -69,9 +69,8 @@ body {
   justify-content: space-between;
   padding-block-start: 25px;
   padding-block-end: 15px;
-  padding-inline: 20px;
+  padding-inline: 40px;
   align-items: baseline;
-  max-width: 1024px;
   margin: auto;
 }
 
@@ -171,17 +170,17 @@ body {
 }
 
 .slide1 {
-  background-image: url('../public/images/heros/hero-image_1-large.jpg');
+  background-image: url('../public/images/heros/hero-image_1.jpg');
   object-fit: cover;
 }
 
 .slide2 {
-  background-image: url('../public/images/heros/hero-image_2-large.jpg');
+  background-image: url('../public/images/heros/hero-image_2.jpg');
   object-fit: cover;
 }
 
 .slide3 {
-  background-image: url('../public/images/heros/hero-image_3-large.jpg');
+  background-image: url('../public/images/heros/hero-image_3.jpg');
   object-fit: cover;
 }
 
@@ -248,10 +247,9 @@ body {
 }
 
 .restaurant-grid {
-  max-width: 1024px;
   margin: auto;
   padding-block: 30px;
-  padding-inline: 20px;
+  padding-inline: 40px;
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

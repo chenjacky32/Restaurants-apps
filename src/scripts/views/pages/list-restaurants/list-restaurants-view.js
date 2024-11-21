@@ -8,8 +8,8 @@ class ListRestaurantsView {
             <div class="hero-group">
                 <div class="container-image">
                 <div class="hero-content">
-                    <h1 tabindex="4">Find Your Favorite Restaurant Here!</h1>
-                    <p tabindex="5">
+                    <h1 tabindex="0">Find Your Favorite Restaurant Here!</h1>
+                    <p tabindex="0">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolorem fugit praesentium harum possimus, aliquam explicabo ex veniam architecto illo officia nostrum ipsa aspernatur eligendi aliquid obcaecati deleniti,
                     omnis provident!
                     </p>
@@ -21,8 +21,8 @@ class ListRestaurantsView {
             </div>
             </section>
             <section class="item-section" aria-labelledby="restaurant-title">
-            <h1 id="restaurant-title" tabindex="6">List Restaurant</h1>
-            <div class="restaurant-grid" id="restaurantGrid"></div>
+            <h1 id="restaurant-title" tabindex="0">List Restaurant</h1>
+            <div class="restaurant-grid" id="restaurantGrid" tabindex="0"></div>
             </section>
         </article>
     `;
@@ -33,7 +33,8 @@ class ListRestaurantsView {
     restaurant.forEach((restaurant, index) => {
       const card = document.createElement('div');
       card.classList.add('card');
-      card.setAttribute('tabindex', `${7 + index}`);
+      card.setAttribute('tabindex', '0');
+
       card.innerHTML = this._renderItemTemplate(restaurant);
       restaurantGrid.appendChild(card);
     });

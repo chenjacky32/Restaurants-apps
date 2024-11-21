@@ -4,8 +4,8 @@ class FavoriteRestaurantsView {
   getTemplate() {
     return `<article>
                 <section class="favorites-section" aria-labelledby="favorites-title">
-                  <h1 id="favorites-title" tabindex="1">Favorite Restaurants</h1>
-                  <div class="favorites-grid">
+                  <h1 id="favorites-title" tabindex="0">Favorite Restaurants</h1>
+                  <div class="favorites-grid" tabind  ex="0">
                   </div>
                 </section>
               </article>`;
@@ -27,6 +27,7 @@ class FavoriteRestaurantsView {
     restaurants.forEach((items) => {
       const restaurantCard = document.createElement('div');
       restaurantCard.classList.add('favorite-card');
+      restaurantCard.setAttribute('tabindex', '0');
       restaurantCard.innerHTML = createItemTemplate(items);
       favoritesGrid.appendChild(restaurantCard);
     });

@@ -8,7 +8,7 @@ const Detail = {
   async render() {
     return `<section class="restaurant-detail" aria-labelledby="restaurant-title" id="restaurantDetail">
         </section>
-        <section id="likeButtonSection">
+        <section id="likeButtonSection" tabindex="0">
         </section>
         `;
   },

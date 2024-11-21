@@ -10,7 +10,7 @@ const NavbarMenuBuilder = {
       const linkItem = document.createElement('a');
       linkItem.href = item.href;
       linkItem.textContent = item.text;
-      linkItem.setAttribute('tabIndex', `${index + 2}`);
+
       if (item.text === 'About Us') linkItem.target = '_blank';
 
       listItem.appendChild(linkItem);
@@ -24,7 +24,7 @@ const NavbarMenuBuilder = {
       const linkItem = document.createElement('a');
       linkItem.href = item.href;
       linkItem.textContent = item.text;
-      linkItem.setAttribute('tabindex', `${index + 2}`);
+
       if (item.text === 'About Us') linkItem.target = '_blank';
 
       listItem.appendChild(linkItem);
