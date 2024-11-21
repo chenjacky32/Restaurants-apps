@@ -1,25 +1,16 @@
 import { createItemTemplate } from '../templates/templates-creator';
 import FavouriteRestaurantsIdb from '../../data/favourites-restaurant-idb';
+import FavoriteRestaurantsPresenter from './liked-restaurants/favorite-restaurants-presenter';
+import FavoriteRestaurantView from './liked-restaurants/favorite-restaurants-view';
+
+const view = new FavoriteRestaurantView();
 
 const Favorite = {
   async render() {
-    return `<article>
-                <section class="favorites-section" aria-labelledby="favorites-title">
-                  <h1 id="favorites-title" tabindex="1">Favorite Restaurants</h1>
-                  <div class="favorites-grid">
-                  </div>
-                </section>
-              </article>`;
+    return view.getTemplate();
   },
   async afterRender() {
-    const mainContent = document.querySelector('.favorites-grid');
-    const favoriteRestaurants = await FavouriteRestaurantsIdb.getAllRestaurants();
-    favoriteRestaurants.forEach((restaurant) => {
-      const restaurantCard = document.createElement('div');
-      restaurantCard.classList.add('favorite-card');
-      restaurantCard.innerHTML += createItemTemplate(restaurant);
-      mainContent.appendChild(restaurantCard);
-    });
+    new FavoriteRestaurantsPresenter({ view, favoriteRestaurants: FavouriteRestaurantsIdb });
   },
 };
 

@@ -1,6 +1,8 @@
 import API_ENDPOINT from '../../globals/api-endpoints';
 
-const getImageUrl = (pictureId) => `${API_ENDPOINT.IMAGE_MEDIUM(pictureId)}`;
+const getImageUrlSmall = (pictureId) => `${API_ENDPOINT.IMAGE_SMALL(pictureId)}?v=${Date.now}`;
+const getImageUrlMedium = (pictureId) => `${API_ENDPOINT.IMAGE_MEDIUM(pictureId)}?v=${Date.now}`;
+const getImageUrlLarge = (pictureId) => `${API_ENDPOINT.IMAGE_LARGE(pictureId)}?v=${Date.now}`;
 
 const createItemTemplate = (items) => {
   const { city, pictureId, name, rating, id, description } = items;
@@ -8,7 +10,13 @@ const createItemTemplate = (items) => {
   return `
       <div class="image-container">
         <span class="location">Kota. ${city}</span>
-        <img src="${getImageUrl(pictureId)}" alt="${name || ''}">
+          <picture>
+            <source media="(max-width: 768px)" type="image/webp" srcset="${getImageUrlSmall(pictureId)}">
+            <source media="(max-width: 768px)" type="image/jpeg" srcset="${getImageUrlSmall(pictureId)}">
+            <source media="(max-width: 1024px)" type="image/webp" srcset="${getImageUrlMedium(pictureId)}">
+            <source media="(max-width: 1024px)" type="image/jpeg" srcset="${getImageUrlMedium(pictureId)}">
+            <img class="lazyload" data-src="${getImageUrlLarge(pictureId)}" alt="${name || ''}">
+          </picture>
       </div>
       <div class="card-content">
         <p class="rating">Rating: ${rating}</p>
@@ -35,7 +43,7 @@ const createItemDetailTemplate = (items) => {
   const customerReview = customerReviews
     .map(
       (review) => `
-            <div class="review">
+            <div class="review" tabindex="0">
               <p class="review-name">${review.name}</p>
               <p class="review-text">${review.review}</p>
               <p class="review-date">${review.date}</p>
@@ -43,27 +51,33 @@ const createItemDetailTemplate = (items) => {
     )
     .join('');
 
-  return `<div class="restaurant-header">
-      <img id="restaurant-image" src=${getImageUrl(pictureId)} alt="${name}">
-      <div class="restaurant-info">
+  return `<div class="restaurant-header" tabindex="0">
+      <picture>
+        <source media="(max-width: 768px)" type="image/webp" srcset="${getImageUrlSmall(pictureId)}">
+        <source media="(max-width: 768px)" type="image/jpeg" srcset="${getImageUrlSmall(pictureId)}">
+        <source media="(max-width: 1024px)" type="image/webp" srcset="${getImageUrlMedium(pictureId)}">
+        <source media="(max-width: 1024px)" type="image/jpeg" srcset="${getImageUrlMedium(pictureId)}">
+        <img class="lazyload" id="restaurant-image" data-src="${getImageUrlLarge(pictureId)}" alt="${name}" tabindex="0">
+      </picture>
+      <div class="restaurant-info" tabindex="0">
         <h1 id="restaurant-name">${name}</h1>
         <p id="restaurant-rating">Rating: ${rating}</p>
         <p id="restaurant-address">Alamat: ${address}</p>
         <p id="restaurant-city">Kota: ${city}</p>
       </div>
     </div>
-    <p id="restaurant-description">${description}</p>
+    <p id="restaurant-description" tabindex="0">${description}</p>
 
     <div class="menu-section">
       <h2>Menu Makanan</h2>
-      <ul id="food-menu">
+      <ul id="food-menu" tabindex="0">
         ${foodMenu}
       </ul>
     </div>
 
     <div class="menu-section">
       <h2>Menu Minuman</h2>
-      <ul id="drink-menu">
+      <ul id="drink-menu" tabindex="0">
         ${drinkMenu}
       </ul>
     </div>
@@ -81,11 +95,11 @@ const createLikeButtonTemplate = () => {
 `;
 };
 
-const createLikedButtonTemplate = () => {
+const createUnlikeButtonTemplate = () => {
   return `<button aria-label="unlike this restaurants" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
 };
 
-export { createItemTemplate, createItemDetailTemplate, createLikeButtonTemplate, createLikedButtonTemplate };
+export { createItemTemplate, createItemDetailTemplate, createLikeButtonTemplate, createUnlikeButtonTemplate };

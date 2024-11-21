@@ -1,7 +1,6 @@
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 import DrawerInitiator from '../utils/drawer-initiator';
-import TabIndexManager from '../utils/tab-index-manager';
 import NavbarMenuBuilder from '../utils/navbar-builder';
 
 class App {
@@ -29,11 +28,6 @@ class App {
       hamburger: this._hamburger,
       navMenu: this._navMenu,
       mainContent: this._mainContent,
-    });
-
-    TabIndexManager.init({
-      hamburger: this._hamburger,
-      restaurantTitle: this._restaurantTitle,
     });
 
     this.renderPage();
