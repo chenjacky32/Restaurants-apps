@@ -1,6 +1,5 @@
 const common = require('./webpack.common');
 const { merge } = require('webpack-merge');
-// const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -21,26 +20,4 @@ module.exports = merge(common, {
       },
     ],
   },
-  // plugins: [
-  //   new WorkboxWebpackPlugin.GenerateSW({
-  //     // swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
-  //     swDest: './sw.bundle.js',
-  //     runtimeCaching: [
-  //       {
-  //         urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
-  //         handler: 'StaleWhileRevalidate',
-  //         options: {
-  //           cacheName: 'restaurant_data',
-  //         },
-  //       },
-  //       {
-  //         urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/images/medium'),
-  //         handler: 'StaleWhileRevalidate',
-  //         options: {
-  //           cacheName: 'restaurant_data_image',
-  //         },
-  //       },
-  //     ],
-  //   }),
-  // ],
 });
