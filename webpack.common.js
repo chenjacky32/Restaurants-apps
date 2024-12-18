@@ -91,6 +91,8 @@ module.exports = {
       ],
       overrideExtension: true,
     }),
-    process.env.NODE_ENV !== 'production' && new BundleAnalyzerPlugin(),
-  ].filter(Boolean),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+    }),
+  ],
 };
